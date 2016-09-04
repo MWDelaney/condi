@@ -3,6 +3,8 @@
 // bower:scss
 // endbower
 
+@import "_mixins";
+
 html,
 body,
 main {
@@ -17,10 +19,6 @@ main {
 	@extend .container, .text-center;
 }
 header {
-	@extend .jumbotron;
-	position: relative;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
+	@extend .jumbotron, .vertical-center;
+
 }

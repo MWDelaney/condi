@@ -1,8 +1,5 @@
 <?php
 require('lib/setup.php');
-
-use Condi\Setup;
-
  ?>
 
 <!DOCTYPE html>
@@ -12,7 +9,7 @@ use Condi\Setup;
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title><?=$title?></title>
+		<title><?=$config['title']?></title>
 
 		<link href="dist/css/main.css" rel="stylesheet">
 
@@ -24,18 +21,16 @@ use Condi\Setup;
 		<![endif]-->
 
 	</head>
-	<body class="<?=Condi\Setup\classes()?>">
+	<body class="<?=body_classes()?>">
 
 		<main>
-			<header>
 				<?php
-					if(Condi\Setup\condition()) {
+					if(Condi\Condition\condition()) {
 						include('templates/true.php');
 					} else {
 						include('templates/false.php');
 					}
 				 ?>
-			</header>
 		</main>
 
 	</body>
