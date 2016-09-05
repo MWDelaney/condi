@@ -33,5 +33,9 @@ require('lib/setup.php');
 				 ?>
 		</main>
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="dist/js/package.js"></script>
+		<script src="dist/js/main.js"></script>
+
 	</body>
 </html>

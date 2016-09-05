@@ -68,6 +68,7 @@ gulp.task('build', function(callback) {
 	runSequence('clean',
 							'images',
 							'bower_scripts',
+							'scripts',
 							'styles',
 							'bootstrap_fonts',
 							callback);
