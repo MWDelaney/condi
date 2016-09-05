@@ -1,16 +1,16 @@
-var gulp						= require('gulp');
-var sass						= require('gulp-sass');
-var imagemin				= require('gulp-imagemin');
-var flatten					= require('gulp-flatten');
+var gulp		= require('gulp');
+var sass		= require('gulp-sass');
+var imagemin		= require('gulp-imagemin');
+var flatten		= require('gulp-flatten');
 var mainBowerFiles	= require('main-bower-files');
-var concat					= require('gulp-concat');
-var uglify					= require('gulp-uglify');
-var wiredep					= require('wiredep').stream;
-var runSequence			= require('run-sequence');
+var concat		= require('gulp-concat');
+var uglify		= require('gulp-uglify');
+var wiredep		= require('wiredep').stream;
+var runSequence		= require('run-sequence');
 
 var config = {
- 		dist: './dist',
- 		assets: './assets' 
+ 	dist: './dist',
+ 	assets: './assets' 
 }
 
 // ### Images
@@ -28,22 +28,22 @@ gulp.task('images', function() {
 // Scripts
 gulp.task("bower_scripts", function(){
 	return gulp.src(mainBowerFiles('**/*.js'))
-			.pipe(concat('package.js'))
-			.pipe(gulp.dest(config.dist + '/js'))
+		.pipe(concat('package.js'))
+		.pipe(gulp.dest(config.dist + '/js'))
 });
 
 // Scripts
 gulp.task("scripts", function(){
 	return gulp.src(config.assets + '/scripts/*.js')
-			.pipe(concat('main.js'))
-			.pipe(gulp.dest(config.dist + '/js'))
+		.pipe(concat('main.js'))
+		.pipe(gulp.dest(config.dist + '/js'))
 });
 
 // ### Fonts
-gulp.task('bootstrap_fonts', function() {
+gulp.task('fonts', function() {
 	return gulp.src(mainBowerFiles(['**/*.eot', '**/*.svg', '**/*.ttf', '**/*.woff', '**/*.woff2']))
 		.pipe(flatten())
-		.pipe(gulp.dest(config.dist + '/fonts/bootstrap'));
+		.pipe(gulp.dest(config.dist + '/fonts'));
 });
 
 
@@ -66,12 +66,12 @@ gulp.task('styles', function() { 
 //Build task
 gulp.task('build', function(callback) {
 	runSequence('clean',
-							'images',
-							'bower_scripts',
-							'scripts',
-							'styles',
-							'bootstrap_fonts',
-							callback);
+			'images',
+			'bower_scripts',
+			'scripts',
+			'styles',
+			'bootstrap_fonts',
+			callback);
 });
 
 
