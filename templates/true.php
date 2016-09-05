@@ -5,6 +5,7 @@
  * This template is loaded if the conditional statement returns true
  */
 
+ if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) { die(); };
  ?>
 
 <header>

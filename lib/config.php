@@ -4,6 +4,7 @@
  *
  * Use the following settings to configure and customize your Condi project
 */
+if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) { die(); };
 
 $config = array();
 

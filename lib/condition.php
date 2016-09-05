@@ -5,6 +5,7 @@
  *
  * The conditional function for the project. Must return "true" if the condition is met.
  */
+ if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) { die(); };
 
 namespace Condi\Condition;
 
