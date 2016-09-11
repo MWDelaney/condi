@@ -8,7 +8,6 @@
 	"private": true,
 	"dependencies": {
 		"bootstrap-sass": "3.3.6",
-		"matchHeight": "matchheight#^0.7.0"
 	},
 	"overrides": {
 		"bootstrap-sass": {
